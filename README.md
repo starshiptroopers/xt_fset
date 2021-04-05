@@ -1,12 +1,12 @@
 # xt_fset
 
-Extension (plugin) to linux kernel netfilter subsystem (iptables) allows you manipulate linux kernel ipsets (add or remove some ip-addresses into the ipset) remotely by sending the control ICMP packets.
+xt_fset is the kernel module and iptables extension (plugin) to linux kernel netfilter subsystem allows you manipulate linux kernel ipsets (add or remove some ip-addresses into the ipset) remotely by sending the control ICMP packets.
 
-The plugin was created as part of the study of the linux kernel netfilter subsystem and finding the solution for real task: to signal the remote router to change traffic or route policy for specific hosts without using well known routing protocols (e.g. ospf)
+The plugin was created as part of the study of the linux kernel netfilter subsystem and looking for the solution for real task: to signal the remote router to change traffic or route policy for specific hosts without using well known routing protocols (e.g. ospf)
 
 For example, we have the network configuration:
 
-               ---> Internet link 2 -------------->--------------
+                ---> Internet link 2 -------------->--------------
                |                                                  |
     Host1 <-> Router A <-> Router B <-> Internet link 1 <----> 128.128.128.128
 
@@ -14,7 +14,7 @@ For example, router A has default route to router B and the backup "Internet Lin
 
 Let's assume,for some reasons router B lost the route to the internet host 128.128.128.128,
  and began to reject traffic directed from Host1 to 128.128.128.128 with replying icmp packet type "network-unreachable".
-The xt_fset module running at router A can catch ICMP "network-unreachable" packets and put the IP addresses stored in this ICMP packet into the kernel ipset which is routed to the backup uplink.
+The xt_fset module running at router A can catch ICMP "network-unreachable" packets and put the IP addresses located in this ICMP packet into the kernel ipset which is routed to the backup uplink.
 
 Another more general application: you can control the router A kernel ipsets (add or remove some ip-addresses into the ipset) remotely by sending ICMP packets.
 
