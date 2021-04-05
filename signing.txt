@@ -1,0 +1,27 @@
+Since kernel 4.0, some server and desktop Linux distro activated the kernel module signing procedure. 
+You can't load the third-party kernel module into the kernel without signing the module with keys stored into the kernel keys storage.
+
+To sign the kernel module:
+
+1. Setup some utilities:
+sudo apt-get install build-essential linux-headers-$(uname -r) make
+
+2. generate the keys
+openssl req -new -x509 -newkey rsa:2048 -keyout liberator-kernel.priv -outform DER -out liberator-kernel.der -nodes -days 36500 -subj "/CN=Liberator.one/"
+
+2. sign the module with the keys
+sudo /usr/src/linux-headers-`uname -r`/scripts/sign-file sha256 ./liberator-kernel.priv ./liberator-kernel.der hello.ko
+
+3. Import the keys into the kernel (BIOS) storage
+sudo mokutil --import liberator-kernel.der
+
+4. Reboot the machine and allow the keys import into UEFI BIOS
+
+Read more: https://ubuntu.fliplinux.com/x43a-44.html and https://www.kernel.org/doc/html/v4.15/admin-guide/module-signing.html
+
+Начиная с ядра 4.0 некоторые серверные и десктопные дистрибутивы активировали обязательную процедуру подписания модулей ядра.
+Модуль ядра не будет загружен, если он не подписан ключами, которые хранятся в хранилище ключей ядра (или вкомпилированы в само ядро, или хранятся в хранилище UEFI BIOS)
+
+
+Starshiptroopers
+Aleksandr Cherviakov
