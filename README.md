@@ -5,9 +5,9 @@ The plugin was created as part of the study of the linux kernel netfilter subsys
 
 For example, we have the network configuration:
 
-             ---> Internet link 2 -------------->--------------
-            |                                                  |
-Host1 <-> Router A <-> Router B <-> Internet link 1 <----> 128.128.128.128
+               ---> Internet link 2 -------------->--------------
+               |                                                  |
+  Host1 <-> Router A <-> Router B <-> Internet link 1 <----> 128.128.128.128
 
 For example, router A has default route to router B and the backup "Internet Link 2". We need router A to route the traffic addressed to 128.128.128.128 into the backup uplink when router B lost the route for some internet host (128.128.128.128).
 
