@@ -63,7 +63,7 @@ Members:
     dmesg
    you will see the message: FSET: 2.2.2.3 has been added to ipset
 
-# Important note
+# Kernel module signing
 
 Since kernel 4.0, some server and desktop Linux distro activated the kernel module signing procedure. 
 You can't load the third-party kernel module into the kernel without signing the module with keys stored into the kernel keys storage. 
@@ -71,4 +71,8 @@ See signing.txt how to create the keys, import them into the kernel storage and 
 
 # OpenWRT
 
-This module has been developed to work at the low-performance OpenWRT routers. You can build the module for OpenWRT. See Makefile into the openwrt directory 
+This module has been developed to work at the low-performance OpenWRT routers. You can build the module for OpenWRT with the Makefile into the openwrt directory. 
+
+# Important note
+
+I'm not a linux kernel developer and C developer now although I have some linux kernel developing background many years ago. Therefore, the code may not be clean and optimal enough.
