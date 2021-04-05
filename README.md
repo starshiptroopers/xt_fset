@@ -40,9 +40,10 @@ ping -p XXXXXXXX - where XXXXXXXX is the payload which will be added into the IC
 
 Testing example:
 
+```
 1. Place the kernel module into autoload or load it by hands:.
       insmod xt_FSET.ko
-2. Place the iptables control library libxt_FSET.so into iptables library folder for example:.
+2. Place the iptables control library libxt_FSET.so into iptables library folder for example:
       cp libxt_FSET.so /usr/lib/x86_64-linux-gnu/xtables
 3. Create ipset with command:.
       create test-ipset hash:ip family inet hashsize 2048 maxelem 65536
@@ -62,6 +63,7 @@ Members:
 8. check the kernel messages with dmesg:
     dmesg
    you will see the message: FSET: 2.2.2.3 has been added to ipset
+```
 
 # Kernel module signing
 
