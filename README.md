@@ -73,7 +73,7 @@ See signing.txt how to create the keys, import them into the kernel storage and 
 
 # OpenWRT
 
-This module has been developed to work at the low-performance OpenWRT routers. You can build the module for OpenWRT with the Makefile into the openwrt directory. 
+This module has been developed to work at the low-performance OpenWRT routers. You can build the module for OpenWRT with the Makefile located in the openwrt directory. 
 
 # Important note
 
