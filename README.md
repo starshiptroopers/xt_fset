@@ -67,7 +67,7 @@ Members:
 
 # Kernel module signing
 
-Since kernel 4.0, some server and desktop Linux distro activated the kernel module signing procedure. 
+Since kernel 4.0, some server and desktop Linux distro activated the kernel module signing feature. 
 You can't load the third-party precompiled kernel module into the kernel without signing the module with keys stored in your kernel's keys storage. 
 See signing.txt how to create the keys, import them into the kernel storage and build and sign xt_fset module
 
